@@ -4,6 +4,9 @@ import Layout from '../../components/Layout'
 import PostList from '../../components/PostList'
 
 import './Blog.css'
+import AdSense from 'react-adsense'
+
+import AdBanner from '../../components/Adv/AdBanner'
 
 class Blog extends Component {
   render() {
@@ -13,7 +16,8 @@ class Blog extends Component {
           <div className="hero-body">
             <div className="container">
               <h1 className="title is-2">Blog Posts</h1>
-              <h2 className="subtitle">Rants, Raves, and Writeups</h2>
+              <h2 className="subtitle">Technical content</h2>
+              <AdBanner />
             </div>
           </div>
         </div>

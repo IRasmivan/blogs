@@ -24,9 +24,9 @@ class Post extends Component {
   componentDidMount() {
     const { slug } = this.props.match.params
     getPostBySlug(slug).then(response => {
-      console.log(response);
-      const post = response.items[0].fields;
-      
+      console.log(response)
+      const post = response.items[0].fields
+
       this.setState({ ...post, isLoading: false })
 
       // After the post is loaded, we need to re-call Prism's highlight method to get
@@ -45,7 +45,8 @@ class Post extends Component {
       )
     }
 
-    const { title, subtitle, content, datePublished } = this.state
+    const { title, subtitle, content, date } = this.state
+    console.log(this.state)
     return (
       <Layout>
         <div className="container">
@@ -53,7 +54,7 @@ class Post extends Component {
             <div className="column is-8 is-offset-2">
               <h1 className="title is-2">{title}</h1>
               <h2 className="subtitle is-4">{subtitle}</h2>
-              <p>{moment(datePublished).format('MMMM D, YYYY')}</p>
+              <p>{moment(date).format('MMMM D, YYYY')}</p>
 
               <ReactMarkdown
                 source={content}

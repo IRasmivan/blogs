@@ -1,10 +1,10 @@
-import React from 'react'
-import * as Markdown from 'react-markdown'
-const BlogContent = (props) => (
+import React from "react";
+import * as Markdown from "react-markdown";
+const BlogContent = props => (
   <article className="media">
     <div className="media-left">
       <figure className="image is-64x64">
-        <img src={props.icon} alt="Image" />
+        <img src={props.icon} alt="Awsome icon" />
       </figure>
     </div>
     <div className="media-content">
@@ -13,13 +13,17 @@ const BlogContent = (props) => (
         <Markdown
           source={
             props.limit
-            ? props.content.split(" ").splice(0,props.limit).join(" ").concat('...')
-            : props.content
+              ? props.content
+                  .split(" ")
+                  .splice(0, props.limit)
+                  .join(" ")
+                  .concat("...")
+              : props.content
           }
         />
       </div>
-      { props.children }
+      {props.children}
     </div>
   </article>
-)
-export default BlogContent
+);
+export default BlogContent;

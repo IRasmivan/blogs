@@ -1,24 +1,30 @@
-import moment from 'moment'
+// import moment from 'moment'
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import BlogNav from '../shared/BlogNav'
-import BlogContent from '../shared/BlogContent';
+import BlogContent from '../shared/BlogContent'
 
 import './PostListItem.css'
 
 class PostListItem extends Component {
   render() {
-    const { datePublished, title, subtitle, slug } = this.props
+    // const { datePublished, title, subtitle, slug } = this.props
 
     return (
-    <div className="box">
-    <BlogContent limit={11} {... this.props }>
-      <BlogNav date={this.props.date} to={{
-        pathname: `/blog/${ this.props.path}`,
-        state: `${ this.props }`,
-      }} status ={this.props.status} textread= 'Read More' />
-    </BlogContent>
-  </div>);
+      <div className="box">
+        <BlogContent limit={11} {...this.props}>
+          <BlogNav
+            date={this.props.date}
+            to={{
+              pathname: `/blog/${this.props.path}`,
+              state: `${this.props}`
+            }}
+            status={this.props.status}
+            textread="Read More"
+          />
+        </BlogContent>
+      </div>
+    )
 
     // return (
     //   <div className="post-list-item">
