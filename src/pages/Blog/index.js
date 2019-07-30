@@ -1,18 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import Layout from '../../components/Layout'
-import PostList from '../../components/PostList'
+import Layout from "../../components/Layout";
+import PostList from "../../components/PostList";
 
-import './Blog.css'
-import AdSense from 'react-adsense'
+import "./Blog.css";
+import AdSense from "react-adsense";
 
-import AdBanner from '../../components/Adv/AdBanner'
+import AdBanner from "../../components/Adv/AdBanner";
+import { TitleComponent } from "../../components/shared/TitleComponent";
 
 class Blog extends Component {
   render() {
     return (
       <Layout>
-        <div className="hero blog-hero" style={{ marginTop: '2em' }}>
+        <TitleComponent title="Rasmi Blog" />
+        <div className="hero blog-hero" style={{ marginTop: "2em" }}>
           <div className="hero-body">
             <div className="container">
               <h1 className="title is-2">Blog Posts</h1>
@@ -23,8 +25,8 @@ class Blog extends Component {
         </div>
         <PostList />
       </Layout>
-    )
+    );
   }
 }
 
-export default Blog
+export default Blog;

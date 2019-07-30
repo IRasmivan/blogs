@@ -1,18 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import Header from '../Header'
+import Header from "../Header";
 
 class Layout extends Component {
   render() {
     return (
       <div>
         <Header />
-        <div>
-          {this.props.children}
-        </div>
+        <div style={{ marginTop: "70px" }}>{this.props.children}</div>
       </div>
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;
